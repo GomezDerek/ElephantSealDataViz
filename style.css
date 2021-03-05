@@ -1,0 +1,76 @@
+/* put the map in! */
+/*
+body {
+  
+    background-image: url("./media/Ano_Nuevo_Map.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+*/
+
+#chart {
+    /*position: absolute;
+    top: 0px;*/
+    left: 0px;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid black;
+    background-color: #99ccff;
+}
+
+#label4 {
+    color: green;
+    right: 25%;
+    bottom: 25%;
+}
+
+.slidecontainer {
+    width: 25%;
+    /*margin: auto;*/
+}
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+/*
+#container {
+    position: absolute;
+    left: 0px;
+    /*width: 395px;
+    height: 377px;
+    *//*
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+} 
+*/

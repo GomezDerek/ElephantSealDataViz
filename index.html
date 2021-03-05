@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="./d3.min.js"></script>
+        <script src="./script.js"></script>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <div class="slidecontainer">
+            <p>
+                <input type="range" min="1976" max="2017" value="2001" class="slider" id="myRange">
+                Year:
+                <output id="year">2001</output>
+            </p>
+        </div>
+
+        <div id="chart">
+
+        </div>
+        <!---
+         <div id="container" onclick="showCoords(event)"></div>
+        <script>
+        //this function is taken from:
+        //https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_event_mouse_screenxy_clientxy
+        function showCoords(event) {
+            var coordinates = {
+                x: event.clientX,
+                y: event.clientY
+            }
+            console.log("X: " + coordinates.x + ", Y: " + coordinates.y);
+            //return coordin
+        </script>
+    -->
+
+    </body>
+</html>
