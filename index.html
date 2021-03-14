@@ -1,37 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script src="./d3.min.js"></script>
-        <script src="./script.js"></script>
+        <script src="./javascript/lib/d3.min.js"></script>
+        <script src="./javascript/tools.js"></script>
+        <script src="./javascript/data.js"></script>
+        <script src="./javascript/draw.js"></script>
+
         <link rel="stylesheet" href="./style.css">
+        
+        <!--Play/Pause Icons unchanged from Font Awesome - LICENSE: https://fontawesome.com/license-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
-        <div class="slidecontainer">
-            <p>
-                <input type="range" min="1976" max="2017" value="2001" class="slider" id="myRange">
-                Year:
-                <output id="year">2001</output>
-            </p>
+        <h1 style="text-align: center">Elephant Seal Population on the Ano Nuevo Reserve</h1>
+
+        <div id="slider-and-button"></div>
+            <div class="slidecontainer">
+                <p>
+                    <input type="range" min="1" max="492" value="1" class="slider" id="myRange">
+                    <output id="year">JAN 1976</output>
+                </p>
+            </div>
+            <div id="play-pause">
+                <button onclick="playPauseClicked(event)">
+                    <img id="icon" src="./media/icons/play-solid.svg" height= "10" width="10"></img>
+                </button>
+            </div>
         </div>
 
-        <div id="chart">
-
-        </div>
-        <!---
+        <div id="chart"></div>
+        <!--- uncomment this line when you want to use the showCoords script
          <div id="container" onclick="showCoords(event)"></div>
-        <script>
-        //this function is taken from:
-        //https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_event_mouse_screenxy_clientxy
-        function showCoords(event) {
-            var coordinates = {
-                x: event.clientX,
-                y: event.clientY
-            }
-            console.log("X: " + coordinates.x + ", Y: " + coordinates.y);
-            //return coordin
-        </script>
-    -->
-
+        -->
     </body>
 </html>

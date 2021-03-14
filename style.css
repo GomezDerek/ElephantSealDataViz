@@ -62,6 +62,10 @@ body {
     background: #4CAF50;
     cursor: pointer;
 }
+
+#slider-and-button {
+    display: inline-block;
+}
 /*
 #container {
     position: absolute;
