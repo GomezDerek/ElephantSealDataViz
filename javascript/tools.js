@@ -60,7 +60,7 @@ var stepClicked = function(event) {
     }
 }
 
-var autoSlider;
+var autoSlider = setInterval(autoShiftSlider, interval); //set the slider on autoplay
 //when the button next to the slider is clicked
 var playPauseClicked = function(event) {
     //is play button?
