@@ -249,6 +249,7 @@ var addSVG = function() {
 
     //black is for pups
     svg.append("rect")
+        .attr("stroke", "black")
         .attr("fill", "#220C08")
         .attr("x", width - 140)
         .attr("y", 20)
@@ -263,6 +264,7 @@ var addSVG = function() {
     
     //cream is for juveniles
     svg.append("rect")
+        .attr("stroke", "black")
         .attr("fill", "#EDE9DD")
         .attr("x", width - 140)
         .attr("y", 50)
@@ -277,6 +279,7 @@ var addSVG = function() {
 
     //tan is for females
     svg.append("rect")
+        .attr("stroke", "black")
         .attr("fill", "#9B8576")
         .attr("x", width - 140)
         .attr("y", 80)
@@ -291,6 +294,7 @@ var addSVG = function() {
 
     //pink/brown is for males
     svg.append("rect")
+        .attr("stroke", "black")
         .attr("fill", "#BC8D7D")
         .attr("x", width - 140)
         .attr("y", 110)
