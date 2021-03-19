@@ -14,18 +14,21 @@
     </head>
 
     <body>
-        <h1 style="text-align: center">Elephant Seal Population on the Ano Nuevo Reserve</h1>
+        <h1>Elephant Seal Population on the Ano Nuevo Reserve</h1>
 
         <div id="slider-and-button"></div>
             <div class="slidecontainer">
                 <p>
-                    <input type="range" min="1" max="492" value="1" class="slider" id="myRange">
                     <output id="year">JAN 1976</output>
+                    <input type="range" min="1" max="492" value="1" class="slider" id="myRange">
                 </p>
             </div>
-            <div id="play-pause">
-                <button onclick="playPauseClicked(event)">
+            <div id="slider-buttons">
+                <button class="button" onclick="playPauseClicked(event)">
                     <img id="icon" src="./media/icons/play-solid.svg" height= "10" width="10"></img>
+                </button>
+                <button class="button" onclick="stepClicked(event)">
+                    <img src="./media/icons/step-forward-solid.svg" height= "10" width="10"></img>
                 </button>
             </div>
         </div>

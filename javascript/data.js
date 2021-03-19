@@ -42,8 +42,8 @@ for(let year = 1968; year < 2018; year++) {
 }
 
 //check up to make sure the sealCensus is correctly structured
-debug("Empty seal census: ");
-debug(sealCensus);
+//debug("Empty seal census: ");
+//debug(sealCensus);
 
 var regions = []; //an array used to find how many censuses were recorded at each area
 
@@ -81,7 +81,7 @@ var generalLocation = function(X) { //x = location
         )
         return "Ano Point"
     else {
-        let locatons = ["North Point", "Bight Beach North", "Mid Bight Beach", "Ano Point"];
+        let locations = ["North Point", "Bight Beach North", "Mid Bight Beach", "Ano Point"];
         return locations[  Math.floor( Math.random() * locations.length ) ];
     }
 
@@ -98,18 +98,18 @@ var dataLength = 15096;
 d3.csv("./data/Elephant Seal Census Data_ANML_.csv", function(data, index) {
 
     //populate regions[]
-    debug(data.Location + " is already in array: ");
-    debug(regions.some(element => element.Location == data.Location));
+    //debug(data.Location + " is already in array: ");
+    //debug(regions.some(element => element.Location == data.Location));
     if(!regions.some(element => element.Location == data.Location)) { //if region is nout found, add region to the array
-        debug("Adding " + data.Location + " to array");
+        //debug("Adding " + data.Location + " to array");
         regions.push({Location: data.Location, count: 1});
     }
     else {
-        debug("increasing " + data.Location + "\'s count in array");
+        //debug("increasing " + data.Location + "\'s count in array");
         let index = regions.findIndex(element => element.Location == data.Location);
-        debug(index);
-        debug(regions);
-        debug(regions[index]);
+        //debug(index);
+        //debug(regions);
+        //debug(regions[index]);
         regions[index].count ++;
     }
 

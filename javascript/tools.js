@@ -48,21 +48,35 @@ var showCoords = function(event) {
 var debugMode = true;
 var debug = string => { if(debugMode) console.log(string) };
 
+var stepClicked = function(event) {
+    let slider = document.getElementsByClassName("slider")[0];
+    if(parseInt(slider.value) < parseInt(slider.max)) {
+        slider.value = parseInt(slider.value) + 1; //WE USE PARSEINT BC "1" + 1 = 11
+        //also update output here in addition to d3
+        document.getElementById("year").innerHTML = convertSliderValue(slider.value);
 
+        //trigger d3 force simulation reset()
+        slider.dispatchEvent(event2);
+    }
+}
+
+var autoSlider;
 //when the button next to the slider is clicked
 var playPauseClicked = function(event) {
     //is play button?
     let icon = document.getElementById("icon");
     
-    let interval = 1000; //ms
+    let interval = 1500; //ms
 
     if(iconURL() == "/media/icons/play-solid.svg") { //play button was clicked
         icon.src = "/media/icons/pause-solid.svg"; //change to pause icon
-        setInterval(autoShiftSlider, interval); //shift slider every interval 
+        autoSlider = setInterval(autoShiftSlider, interval); //shift slider every interval 
+        console.log("play button clicked");
     }
     else if(iconURL() == "/media/icons/pause-solid.svg") {//pause button was clicked
         icon.src = "/media/icons/play-solid.svg"; //change to play icon
-        clearInterval(autoShiftSlider); //stop slider shift
+        clearInterval(autoSlider ); //stop slider shift
+        console.log("pause button clicked");
     }
     else if(iconURL() == "/media/icons/undo-solid.svg") {
         icon.src = "/media/icons/pause-solid.svg"; //change to play icon
@@ -71,8 +85,11 @@ var playPauseClicked = function(event) {
         slider.value = slider.min; //reset slider to beginning
         document.getElementById("year").innerHTML = slider.value;//update output
 
+        clearInterval(autoSlider);
+
         //comment this out bc we never used clearInterval when max was reached
         //setInterval(autoShiftSlider, interval); //shift slider every interval 
+        console.log('replay clicked');
     }
     else {
         console.log("Neither play or pause recognized. Url is : " + icon.src);
@@ -101,6 +118,9 @@ let autoShiftSlider = () => {
         slider.value = parseInt(slider.value) + 1; //WE USE PARSEINT BC "1" + 1 = 11
         //temporarily update output here instead of d3
         document.getElementById("year").innerHTML = convertSliderValue(slider.value);
+
+        //trigger d3 force simulation reset()
+        slider.dispatchEvent(event);
     }
     else {
         //swap button to replay button - max has been reached
@@ -142,4 +162,23 @@ var convertSliderValue = (value) => {
         monthString = "???"
 
     return monthString + " " + year;
+}
+
+//manually trigger an oninput event for the slider to trigger d3 force simulation reset
+// var event = document.createEvent('Event');
+// event.initEvent('input', true, true);
+//elem.dispatchEvent(event)
+var event = new Event('input', {
+    bubbles: true,
+    cancelable: true,
+});
+
+var event2 = new Event('input', {
+    bubbles: true,
+    cancelable: true,
+});
+
+var combineArrays = (a1, a2) => {
+    a2.foreach(x => a1.push(x));
+    return a1;
 }

@@ -8,6 +8,11 @@ body {
     background-size: contain;
 }
 */
+h1 {
+    text-align: center; 
+    padding-bottom: 10px; 
+    margin-bottom: 0px;
+}
 
 #chart {
     /*position: absolute;
@@ -63,9 +68,9 @@ body {
     cursor: pointer;
 }
 
-#slider-and-button {
-    display: inline-block;
-}
+
+
+
 /*
 #container {
     position: absolute;
